@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2016 at 04:13 PM
+-- Generation Time: Jun 26, 2016 at 08:16 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -59,7 +59,15 @@ CREATE TABLE IF NOT EXISTS `transaksi` (
   `durasi` double NOT NULL,
   `total_biaya` int(11) DEFAULT NULL,
   `status` enum('bayar','belum') DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `transaksi`
+--
+
+INSERT INTO `transaksi` (`id_transaksi`, `no_ktp`, `kode_voucher`, `waktu_masuk`, `waktu_keluar`, `durasi`, `total_biaya`, `status`) VALUES
+(3, '12345', 'P1', '2016-06-26 18:15:26', '2016-06-26 23:00:00', 1, 1000, 'bayar'),
+(4, '12345', 'P2', '2016-06-26 18:15:40', '2016-06-26 23:00:00', 1, 1000, 'bayar');
 
 -- --------------------------------------------------------
 
@@ -135,7 +143,7 @@ ALTER TABLE `voucher_pulsa`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
