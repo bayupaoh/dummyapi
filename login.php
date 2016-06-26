@@ -8,7 +8,7 @@ if($email !="" || $password !=""){
   	$hasil=mysql_query($query);
 
   	if($data = mysql_fetch_array($hasil)){
-		$result=array('kode' => 200,'message'=>'register berhasil','id_user'=> $data['no_ktp'],'nama'=>$data['nama_user'],'saldo'=>$data['pulsa']);
+		$result=array('kode' => 200,'message'=>'register berhasil','id_user'=> $data['no_ktp'],'nama'=>$data['nama_user'],'saldo'=>$data['pulsa'],'url_foto'=>$data['url_foto']);
   	}else{
   		$result=array('kode' => 400,'message'=>'data gagal');
   	}
