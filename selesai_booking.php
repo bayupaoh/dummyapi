@@ -25,7 +25,7 @@
 		  		
 		  		$sisapulsa = $data["pulsa"]-$totalbiaya;
 		  		
-		  		echo $query="update user set pulsa=$sisapulsa where no_ktp='$id_user'";
+		  		echo $query="update pengguna set pulsa=$sisapulsa where no_ktp='$id_user'";
 
 		  		$hasil=mysql_query($query);
 		  		if($hasil){
