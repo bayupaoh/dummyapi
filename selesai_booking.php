@@ -17,7 +17,27 @@
 
 	  	$hasil=mysql_query($query);
 	  	if($hasil){
-		  	$result=array('kode' => 200,'message'=>'pembayaran berhasil','biaya_parkir'=>$totalbiaya);  	
+	  		
+	  		$query="SELECT * FROM pengguna where id_user='$id_user'";
+
+		  	$hasil=mysql_query($query);
+		  	if($data=mysql_fetch_array($hasil)){
+		  		
+		  		$sisapulsa = $data["pulsa"]-$totalbiaya;
+		  		
+		  		$query="update user set pulsa=$sisapulsa where id_user='$id_user'";
+
+		  		$hasil=mysql_query($query);
+		  		if($hasil){
+		  		   $result=array('kode' => 200,'message'=>'pembayaran berhasil','biaya_parkir'=>$totalbiaya);  		
+		  		}else{
+		  		 	$result=array('kode' => 400,'message'=>'input data gagal 2'); 	
+		  		}
+		  		
+			  	//$result=array('kode' => 200,'message'=>'pembayaran berhasil','biaya_parkir'=>$totalbiaya);  	
+		  	}else{
+			  	$result=array('kode' => 400,'message'=>'input data gagal 1'); 
+		  	}
 	  	}else{
 		  	$result=array('kode' => 400,'message'=>'input data gagal 1'); 
 	  	}
