@@ -16,7 +16,7 @@
   	if($data=mysql_fetch_array($hasil)){
   		$kode = $data["kode_voucher"];
   		
- 		echo $query="insert into transaksi values(null,'$id_user','$kode','$waktu_awal','$waktu_akhir',TIMESTAMPDIFF(HOUR,'$waktu_awal','$waktu_akhir'),TIMESTAMPDIFF(HOUR,'$waktu_awal','$waktu_akhir')*1000,'belum',$merk,$tipe)";
+ 		$query="insert into transaksi values(null,'$id_user','$kode','$waktu_awal','$waktu_akhir',TIMESTAMPDIFF(HOUR,'$waktu_awal','$waktu_akhir'),TIMESTAMPDIFF(HOUR,'$waktu_awal','$waktu_akhir')*1000,'belum','$merk','$tipe')";
 
   		$hasil=mysql_query($query);
   		if($hasil){
