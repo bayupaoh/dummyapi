@@ -29,7 +29,7 @@
 
 		  		$hasil=mysql_query($query);
 		  		if($hasil){
-		  		   $result=array('kode' => 200,'message'=>'pembayaran berhasil','biaya_parkir'=>$totalbiaya);  		
+		  		   $result=array('kode' => 200,'message'=>'pembayaran berhasil','biaya_parkir'=>$totalbiaya,'sisa_pulsa'=>$sisapulsa);  		
 		  		}else{
 		  		 	$result=array('kode' => 400,'message'=>'input data gagal 2'); 	
 		  		}
