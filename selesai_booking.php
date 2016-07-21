@@ -4,28 +4,28 @@
   $kode_unik = $_POST["kode_unik"];
 
   if($id_user!="" || $kode_unik!=""){
-  	echo $query="select * from transaksi where kode_voucher='$kode_unik' and no_ktp='$id_user' and status='belum'";
+  	$query="select * from transaksi where kode_voucher='$kode_unik' and no_ktp='$id_user' and status='belum'";
   	$hasil=mysql_query($query);
   	if($data=mysql_fetch_array($hasil)){
   		$totalbiaya=$data["total_biaya"];
 
-	echo $query="update transaksi set status='bayar' where kode_voucher='$kode_unik' and no_ktp='$id_user' and status='belum'";
+	$query="update transaksi set status='bayar' where kode_voucher='$kode_unik' and no_ktp='$id_user' and status='belum'";
 
   	$hasil=mysql_query($query);
   	if($hasil){
-	  	echo $query="update voucher_parkir set status='kosong' where kode_voucher='$kode_unik'";
+	  	$query="update voucher_parkir set status='kosong' where kode_voucher='$kode_unik'";
 
 	  	$hasil=mysql_query($query);
 	  	if($hasil){
 	  		
-	  		echo $query="SELECT * FROM pengguna where no_ktp='$id_user'";
+	  		$query="SELECT * FROM pengguna where no_ktp='$id_user'";
 
 		  	$hasil=mysql_query($query);
 		  	if($data=mysql_fetch_array($hasil)){
 		  		
 		  		$sisapulsa = $data["pulsa"]-$totalbiaya;
 		  		
-		  		echo $query="update pengguna set pulsa=$sisapulsa where no_ktp='$id_user'";
+		  		$query="update pengguna set pulsa=$sisapulsa where no_ktp='$id_user'";
 
 		  		$hasil=mysql_query($query);
 		  		if($hasil){
