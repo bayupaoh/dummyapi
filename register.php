@@ -5,12 +5,11 @@ include "koneksi.php";
   $no_plat=$_POST["no_plat"];
   $email=$_POST["email"];
   $password=$_POST["password"];
-  $merk=$_POST["merk"];
-  $tipe=$_POST["tipe"];
+
 
 
   if($no_ktp != "" || $nama !="" || $email !="" || $password !=""){
-  	$query="insert into pengguna values ('$no_ktp','$nama','$email','$password','$merk','$tipe','default.png',0)";
+  	$query="insert into pengguna values ('$no_ktp','$nama','$email','$password','','','default.png',0)";
   	$hasil=mysql_query($query);
   	if(mysql_affected_rows() > 0){
 		$result=array('kode' => 200,'message'=>'register berhasil','id_user'=> $no_ktp,'nama'=>$nama,'saldo'=>0);
