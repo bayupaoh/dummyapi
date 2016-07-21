@@ -29,14 +29,14 @@
 		  		$result=array('kode' => 200,'message'=>'Booking berhasil','kode_unik'=>$kode);
 		  		
 		  		}else{
-		  		$result=array('kode' => 400,'message'=>'input data gagal');  			
+		  		$result=array('kode' => 400,'message'=>'input data gagal 3');  			
 		  		}
 		  		
   		}else{
-  		$result=array('kode' => 400,'message'=>'input data gagal');
+  		$result=array('kode' => 400,'message'=>'input data gagal 2');
   		}
   	}else{
-  		$result=array('kode' => 400,'message'=>'input data gagal');
+  		$result=array('kode' => 400,'message'=>'input data gagal 1');
   	}
   }else{
 	$result=array('kode' => 400,'message'=>'ada field yang kosong');
