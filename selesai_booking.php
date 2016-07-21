@@ -18,14 +18,14 @@
 	  	$hasil=mysql_query($query);
 	  	if($hasil){
 	  		
-	  		$query="SELECT * FROM pengguna where id_user='$id_user'";
+	  		$query="SELECT * FROM pengguna where no_ktp='$id_user'";
 
 		  	$hasil=mysql_query($query);
 		  	if($data=mysql_fetch_array($hasil)){
 		  		
 		  		$sisapulsa = $data["pulsa"]-$totalbiaya;
 		  		
-		  		$query="update user set pulsa=$sisapulsa where id_user='$id_user'";
+		  		$query="update user set pulsa=$sisapulsa where no_ktp='$id_user'";
 
 		  		$hasil=mysql_query($query);
 		  		if($hasil){
