@@ -2,14 +2,16 @@
   include "koneksi.php";
   $id_user = $_POST["id_user"];
   $kode_unik = $_POST["kode_unik"];
+  $tanggal_akhir=$_POST["waktu_keluar"];
+  $durasi=$_POST["durasi"];
 
   if($id_user!="" || $kode_unik!=""){
   	$query="select * from transaksi where kode_voucher='$kode_unik' and no_ktp='$id_user' and status='belum'";
   	$hasil=mysql_query($query);
   	if($data=mysql_fetch_array($hasil)){
-  		$totalbiaya=$data["total_biaya"];
+  		$totalbiaya=$durasi*3000;
 
-	$query="update transaksi set status='bayar' where kode_voucher='$kode_unik' and no_ktp='$id_user' and status='belum'";
+	$query="update transaksi set waktu_keluar='$tanggal_akhir',durasi=$durasi,total_biaya=$totalbiaya,status='bayar' where kode_voucher='$kode_unik' and no_ktp='$id_user' and status='belum'";
 
   	$hasil=mysql_query($query);
   	if($hasil){
