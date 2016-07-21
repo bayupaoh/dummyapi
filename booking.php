@@ -2,7 +2,7 @@
   include "koneksi.php";
   $id_user = $_POST["id_user"];
   $id_tempat=$_POST["id_tempat"];
-  $waktu_awal=date("Y/m/d")." ".$_POST["waktu_booking"];
+  $waktu_awal=$_POST["waktu_booking"];
   $merk=$_POST["merk"];
   $tipe=$_POST["tipe"];
 
