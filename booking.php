@@ -31,7 +31,7 @@
 		  		}
 		  		
   		}else{
-  		$result=array('kode' => 400,'message'=>'input data gagal 2');
+  		$result=array('kode' => 400,'message'=>'$query);
   		}
   	}else{
   		$result=array('kode' => 400,'message'=>'input data gagal 1');
