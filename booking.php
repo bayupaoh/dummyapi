@@ -5,6 +5,8 @@
   $durasi = $_POST["durasi"];
   $waktu_awal=date("Y/m/d")." ".$_POST["waktu_booking"];
   $waktu_akhir=date("Y/m/d")." ".$_POST["waktu_akhir"];
+  $merk=$_POST["merk"];
+  $tipe=$_POST["tipe"];
 
   if($id_user != "" || $durasi !="" || $waktu_awal!="" || $waktu_akhir!=""){
   	
