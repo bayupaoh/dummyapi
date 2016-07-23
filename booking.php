@@ -3,6 +3,7 @@
   $id_user = $_POST["id_user"];
   $id_tempat=$_POST["id_tempat"];
   $waktu_awal=$_POST["waktu_booking"];
+  $no_plat=$_POST["no_plat"];
   $merk=$_POST["merk"];
   $tipe=$_POST["tipe"];
 
@@ -14,7 +15,7 @@
   	if($data=mysql_fetch_array($hasil)){
   		$kode = $data["kode_voucher"];
   		
- 		$query="insert into transaksi values(null,'$id_user','$kode','$waktu_awal',null,0,0,'belum','$merk','$tipe')";
+ 		$query="insert into transaksi values(null,'$id_user','$kode','$waktu_awal',null,0,0,'belum','$merk','$tipe','$no_plat')";
 
   		$hasil=mysql_query($query);
   		if($hasil){
