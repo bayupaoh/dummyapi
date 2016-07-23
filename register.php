@@ -2,7 +2,7 @@
 include "koneksi.php";
   $nama=$_POST["nama"];
   $no_ktp=$_POST["no_ktp"];
-  $no_plat=$_POST["no_plat"];
+  $no_plat='';
   $email=$_POST["email"];
   $password=$_POST["password"];
 
