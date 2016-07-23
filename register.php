@@ -9,7 +9,7 @@ include "koneksi.php";
 
 
   if($no_ktp != "" || $nama !="" || $email !="" || $password !=""){
-  	$query="insert into pengguna values ('$no_ktp','$nama','$email','$password','','','default.png',0)";
+  	$query="insert into pengguna values ('$no_ktp','$nama','$email','$password','','','http://www.cheap-accountants-in-london.co.uk/wp-content/uploads/2015/07/User-Avatar.png',0)";
   	$hasil=mysql_query($query);
   	if(mysql_affected_rows() > 0){
 		$result=array('kode' => 200,'message'=>'register berhasil','id_user'=> $no_ktp,'nama'=>$nama,'saldo'=>0);
